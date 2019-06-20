@@ -1,0 +1,33 @@
+<!--pages/user/user.wxml-->
+<view class='container'>
+  <view class='flex-col  head'>
+    <image catchtap="bindViewTap" class="userinfo-avatar" src="{{infos.NameUrl}}" mode="cover"></image>
+    <text class='title ellipsis'>{{infos.Name}}</text>
+  </view>
+  <view class='flex-col wh userContent'>
+    <navigator url='../person/person'>
+      <view>
+        <image src="{{imgPath}}my.png" mode="widthFix"></image>
+        <text>我的信息</text>
+      </view>
+    </navigator>
+    <navigator url='../collect/collect'>
+      <view>
+        <image src="{{imgPath}}collection.png" mode="widthFix"></image>
+        <text>我的收藏</text>
+      </view>
+    </navigator>
+    <navigator url='../myReserve/myReserve'>
+      <view>
+        <image src="{{imgPath}}reservation.png" mode="widthFix"></image>
+        <text>我的预约</text>
+      </view>
+    </navigator>
+    <navigator url='../myIntegral/myIntegral'>
+      <view>
+        <image src="{{imgPath}}integral.png" mode="widthFix"></image>
+        <text>积分明细</text>
+      </view>
+    </navigator>
+  </view>
+</view>

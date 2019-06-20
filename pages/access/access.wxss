@@ -1,0 +1,18 @@
+/* pages/access/access.wxss */
+.acCon {
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+.acCon .user {
+  align-items: center;
+  width: 55%;
+}
+.nickName{
+  width: 70%;
+}
+.acCon .user image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}

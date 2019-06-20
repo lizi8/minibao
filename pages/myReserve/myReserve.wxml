@@ -1,0 +1,23 @@
+<!--pages/myReserve/myReserve.wxml-->
+<view class='container' wx:if="{{reserveList.length}}">
+    <block wx:for="{{reserveList}}">
+    <view class='content flex-col wh9'>
+      <view class='tpicBox'><image src="{{picUrl+item.ImgUrl}}" class="wh img-radius" mode="widthFix" /></view>
+      <view class='rescon wh9 flex-col'> 
+      <view class='person-data flex-row  ' >
+        <text class='ellipsis name'>预约人：{{item.Name}}</text>
+        <text>预约时间：{{item.Time}}</text> 
+        </view>
+        <text class='title'>{{item.Name1}}</text> 
+        <text>{{item.BuildAddr}}</text> 
+        <text class='price'>{{item.Price}}</text>
+        <view class='wh btnBox' >
+        <text class='btn btnCancel' catchtap='onCancel' data-id='{{item.ProjectCode}}'>取消预约</text>
+      </view>
+      </view>
+       </view>
+    </block>
+</view>
+<view wx:else class="flex-col emptyView">
+  暂无预约
+  </view>

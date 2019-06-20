@@ -1,0 +1,90 @@
+<!--pages/calculator/calculator.wxml-->
+<!--pages/user/user.wxml-->
+<view class='container'>
+
+    <view class='wh8 flex-row head'>
+    <view   wx:for="{{nav}}" class="{{ navIndex == index?'on':'' }}" wx:for-item="item">
+        <text bindtap="changeList" data-index="{{index}}">{{item}}</text>
+      </view>
+      
+     </view>
+     
+      <view class='wh flex-col monthMoney'>
+        <text>每月月供参考(元)</text>
+        <text class='money f15'>{{money}}</text> </view>
+      <view class='wh flex-row'>
+
+        <view class='wh flex-col monthMoney'>
+        <text>还款总额(元)</text>
+        <text class='money f15'>{{total}}</text> </view>
+
+          <view class='wh flex-col monthMoney'>
+        <text>支付利息款(元)</text>
+        <text class='money f15'>{{lixi}}</text> </view>
+    
+    </view>
+  <view class='flex-col wh9 content mt5'>
+    <form bindsubmit="formSubmit">
+      <view>
+        <text>还款方式</text>
+       <radio-group class="radio-group"  name="type" bindchange="radioChange">
+              <label class="radio" >
+                 <radio value="1"   checked="true"/>等额本息
+              </label>
+              <label class="radio" >
+                  <radio value="2" checked=""/>等额本金
+              </label>
+          </radio-group>
+
+      </view>
+      <!-- <view>
+        <text>计算方式</text>
+      </view> -->
+    
+      <view>
+        <text>贷款期限</text>
+         <picker bindchange="yearChange"  name="loansYear" value="{{array[index]}}" range="{{array}}">
+    <view>
+        {{array[index]}}年
+    </view>
+  </picker>
+      </view>
+        <view  wx:if="{{iscloan}}">
+        <text>商业贷款总额</text>
+        <view>
+         <input name="money1" value="" placeholder='请输入贷款总额'></input>万元</view>
+      </view>
+      <view wx:if="{{iscloan}}">
+        <text>商业贷款</text>
+           <picker bindchange="srateChange" value="{{srateArr[sindex]}}" range="{{srateArr}}" >
+    <view>
+        {{srateArr[sindex]}}
+    </view>
+  </picker>
+      </view>
+      <view wx:if="{{iscloan}}">
+        <text>商业贷款利率</text>
+        <view><input name="srate"  value="{{srateNumArr[sindex]}}"></input>%</view>
+      </view>
+          <view  wx:if="{{isgloan}}">
+        <text>公积金贷款总额</text>
+        <view>
+         <input name="money2" value="" placeholder='请输入贷款总额'></input>万元</view>
+      </view>
+         <view  wx:if="{{isgloan}}">
+        <text>公积金贷款</text>
+           <picker bindchange="grateChange" value="{{gindex}}" range="{{grateArr}}">
+    <view>
+        {{grateArr[gindex]}}
+    </view>
+  </picker>
+      </view>
+       <view wx:if="{{isgloan}}">
+        <text>公积金贷款利率</text>
+        <view><input name="grate" value="{{grateNumArr[gindex]}}"></input>%</view>
+         
+      </view>
+      <button form-type='submit' class="btn submit">确认</button>
+    </form>
+  </view>
+</view>

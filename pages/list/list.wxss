@@ -1,0 +1,41 @@
+/* pages/list/list.wxss */
+
+page {
+  height: 100%;
+}
+
+.list-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-content .content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  margin-left: 10%;
+  margin-bottom: 20rpx;
+}
+
+.content .newsPic {
+  height: 320rpx;
+}
+
+.content .title {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.content  .readNum {
+  margin-right: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+  justify-content: flex-start;
+}

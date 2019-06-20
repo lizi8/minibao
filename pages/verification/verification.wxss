@@ -1,0 +1,14 @@
+/* pages/verification/verification.wxss */
+
+.tipMes {
+  margin: 50rpx 0;
+  font-size: 40rpx;
+}
+
+.hxCode {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #b9b9b9;
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+}

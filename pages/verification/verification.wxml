@@ -1,0 +1,13 @@
+<!--pages/verification/verification.wxml-->
+<view class='container'>
+  <view class='flex-col wh9'>
+    <form bindsubmit="formSubmit">
+      <!-- <view class='tipMes'>请输入兑换码</view> -->
+      <view>
+        <input type='text' class='hxCode' name="hxCode" placeholder='请输入6位数兑换码'></input>
+      </view>
+      <view class='scolor'>*工作人员输入兑换码进行核销,兑换前请确定礼品</view>
+      <button class='btn' form-type="submit">确定</button>
+    </form>
+  </view>
+</view>

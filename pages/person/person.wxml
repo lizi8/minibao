@@ -1,0 +1,28 @@
+<!--pages/person/person.wxml-->
+<view class='container'>
+  <view class='flex-col wh9 content'>
+    <form bindsubmit="formSubmit">
+      <view>
+        <text>头像</text>
+        <image bindtap="uploadHead" class="userinfo-avatar" name="headUrl" src="{{infos.NameUrl}}" mode="cover"></image>
+      </view>
+      <view>
+        <text>姓名</text>
+        <input name="userName" value="{{infos.Name}}"></input>
+      </view>
+      <view>
+        <text>性别</text>
+        <picker bindchange="bindgenderChange" name="gender" value="{{infos.Sex}}" range="{{array}}">
+          <view class="picker">
+            {{array[infos.Sex]}}
+          </view>
+        </picker>
+      </view>
+      <view>
+        <text>手机号码</text>
+        <button name="phone" type="button" class='phone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{infos.Phone}}</button>
+      </view>
+      <button form-type='submit' class="btn submit">确认</button>
+    </form>
+  </view>
+</view>

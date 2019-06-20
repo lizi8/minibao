@@ -1,0 +1,33 @@
+/* pages/collect/collect.wxss */
+
+.collectCon {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rpx;
+  background: #fff;
+  box-shadow: 1px 1px 10px #ccc;
+  overflow: hidden;
+   margin-bottom: 40rpx;
+}
+
+.content view {
+  margin-top: 20rpx;
+}
+
+.btnBox {
+  text-align: right;
+  margin-right: 50rpx;
+}
+
+.collectCon .btnCancel {
+  display: inline-block;
+  font-size: 24rpx;
+  width: 180rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 20rpx 0;
+}

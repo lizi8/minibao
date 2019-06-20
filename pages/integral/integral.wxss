@@ -1,0 +1,118 @@
+/* pages/integral/integral.wxss */
+page{
+ height: 100%;
+ overflow: hidden;
+}
+
+.head {
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.head-row1 {
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 138rpx;
+  height: 138rpx;
+}
+
+.signIn, .rule {
+  display: inline-block;
+  border: 1px solid #bd9e7f;
+  border-radius: 30rpx;
+  padding: 0 22rpx;
+  text-align: center;
+  color: #bd9e7f;
+  width: 110rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+}
+
+.on {
+  color: #fff;
+  background: #bd9e7f;
+}
+.content{
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 50rpx;
+}
+.goodsCon {
+  margin-left: 20rpx;
+  height: 850rpx;
+}
+
+
+
+
+
+.goodsBox {
+  display: inline-flex;
+  margin-bottom: 30rpx;
+  width: 42%;
+  margin-left: 30rpx;
+ 
+   
+
+}
+
+.goodsBox image {
+  width: 100%;
+}
+
+.goodsBox .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.goodsBox .num {
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.goodsBox .picbox {
+  width: 100%;
+  height: 264rpx;
+  overflow: hidden;
+}
+
+.navbar1 {
+  width: 16%;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  box-shadow: -1px -1px 8px #ccc;
+  border-radius:  0   10px  10px 0; 
+  overflow: hidden;
+}
+
+.navbar1 view {
+  height: 170rpx;
+  width: 100%;
+  line-height: 170rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.navbar1 view text{
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.active1 {
+  color: #fff;
+  background: #bd9e7f;
+  
+}
+

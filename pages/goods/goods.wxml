@@ -1,0 +1,20 @@
+<!--pages/goods/goods.wxml-->
+<view class='container'>
+<view class='picbox'><image  src="{{picUrl+goods.ImgUrl}}" mode="widthFix" class='wh'></image></view>
+  <view class='flex-col wh9'>
+    <view class='flex-row title-num'>
+      <text class='title ellipsis'>{{goods.Name}}</text>
+      <view class='f15'>
+        <text class='bco'>{{goods.Integral}} </text>积分 </view>
+    </view>
+    <view class='columName bco'>兑换地址</view>
+    <view class='flex-row address'>
+      <image src="{{imgPath}}kfs.png" mode="widthFix" class='icon'></image>
+      <text class='ml1 f14'>售楼处</text>
+      <text class='ml3'>{{goods.Addr}}</text> </view>
+    <view class='columName bco'>商品详情</view>
+    <view class='desc'>{{goods.Detail}}</view>
+  </view>
+  <view class='btn btn-ok wh' bindtap='onVerification'>
+    <text>立即兑换</text> </view>
+</view>

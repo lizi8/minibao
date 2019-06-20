@@ -1,0 +1,30 @@
+/* pages/user/user.wxss */
+.head {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  height: 300rpx;
+  background: #bd9e7f;
+}
+.title {
+  color: #fff;
+}
+.userContent {
+  padding: 0 30rpx;
+}
+.userContent view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 120rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #ececec;
+}
+.userContent view image {
+  width: 40rpx;
+}
+.userContent view text {
+  margin-left: 20rpx;
+}

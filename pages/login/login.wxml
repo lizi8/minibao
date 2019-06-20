@@ -1,0 +1,16 @@
+<view class="container" wx:if="{{isLogin}}">
+  <view class="wechatapp">
+    <view class="header">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="auth-title">申请获取以下权限</view>
+  <view class="auth-subtitle">获得你的公开信息（昵称、头像等）</view>
+  <button class="login-btn" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="authorLogin">授权登录</button>
+</view>
+<view class='container loading' wx:else>
+<view class='loadbox flex-col'>
+<!-- <image  src="{{imgPath}}logo2.png" class='logo' mode="widthFix" ></image> -->
+<image  src="{{imgPath}}logo_dh.png"  class='logodh' mode="widthFix" ></image>
+</view>
+</view>

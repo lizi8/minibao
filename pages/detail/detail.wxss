@@ -1,0 +1,351 @@
+/* pages/detail/detail.wxss */
+.container{
+  overflow-x:hidden; 
+}
+.swiper {
+  width: 100%;
+  height: 800rpx;
+  box-sizing: border-box;
+}
+
+.baseInfo {
+  width: 95%;
+  margin-top: 30rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+  padding-bottom: 60rpx;
+  background: #fff;
+  padding-left: 20rpx;
+  border-radius: 10px;
+  box-shadow: -1px -1px 8px #ccc;
+}
+
+.baseInfo .bulidName {
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.baseInfo view {
+  margin-top: 30rpx;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.baseInfo .con {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-right: 15rpx;
+  width: 13%;
+}
+.price{flex: 1;}
+.price1{font-size:32rpx }
+.baseInfo  .address {
+  color: #666;
+  margin-right: 10rpx;
+  width: 80%;
+}
+
+.baseInfo .icon {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.baseInfo  .base-address {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.baseInfo .looker {
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.baseInfo  .looker .lookNum {
+  width: 100%;
+  align-items: center;
+  font-size: 32rpx;
+  justify-content: flex-start;
+}
+
+.baseInfo  .headList {
+  align-items: flex-end;
+  margin-top: 30rpx;
+}
+
+.headList image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: -5%;
+  border: 2px solid #ccc;
+}
+
+.headList .headmore {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  line-height: 100rpx;
+  text-align: center;
+  border: 2px solid #ccc;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.cloumnCon {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 20rpx;
+}
+
+.columnName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+  color: #bd9e7f;
+}
+.cloumnCon  view text:nth-child(3)
+ {
+  margin-left: 10rpx;
+  flex: 1;
+  color: #666;
+}
+.buildInfo view {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.buildInfo .build-hide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0px;
+}
+
+.buildInfo .icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.scroll-photo, .scroll-house {
+  margin-top: 20rpx;
+  white-space: nowrap;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.photo, .house {
+  width: 40%;
+  display: inline-block;
+  margin-right: 50rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px #ccc;
+  margin-bottom: 25rpx;
+  padding-bottom: 10rpx;
+}
+
+.photo image {
+  width: 100%;
+}
+
+/* 户型介绍 */
+
+.house {
+  width: 60%;
+}
+
+.house image {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.houseName{
+  margin-left: 20rpx;
+  width: 90%;
+  margin-top: 20rpx;
+  justify-content: space-between
+
+}
+
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.around .desc {
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+  color: #333;
+  margin: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.arContent view {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  align-items: flex-start;
+}
+
+.arContent view text:nth-child(2) {
+  margin-left: 20rpx;
+}
+
+.arContent view text:nth-child(3) {
+  margin-left: 20rpx;
+  flex: 1;
+  color: #666;
+}
+
+.arContent .around-hide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0px;
+  align-items: flex-start;
+}
+
+.arContent .icon {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 120rpx;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px soild #ccc;
+}
+
+.footer view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.btn-yuyue {
+  background: #bd9e7f;
+  color: #fff;
+  width: 180rpx;
+  height: 80rpx;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.empty {
+  height: 160rpx;
+  width: 100%;
+}
+
+.poster {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+}
+
+.canvas-poster {
+  position: absolute;
+  top: 1%;
+}
+
+.btn-save, .btn-close {
+  position: absolute;
+  width: 200rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+  background: #bd9e7f;
+  bottom:1%;
+  font-size:28rpx;
+}
+
+.btn-save {
+  right: 15%;
+}
+
+.btn-close {
+  left: 15%;
+}
+
+.mapCon {
+  justify-content: center;
+  align-items: center;
+}
+
+.mapType {
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
+
+.mapType view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transpond {
+  background: url("https://wb.jaas.ac.cn/BaoLiWebSmall/images/zf.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.transpond:after {
+  border: none;
+}
+
+.photoBox {
+  height: 270rpx;
+}
+
+.houseBox {
+  height: 284rpx;
+  text-align: center;
+}
+
+
+.phone,.calculator{
+  position: fixed;
+  right: 0;
+  width: 101rpx;
+  height: 101rpx;
+  bottom: 160rpx;
+}
+.calculator{
+   bottom: 300rpx;
+}
+
+.phone image,.calculator image{
+  width: 100%;
+  height: auto;
+}
+
+

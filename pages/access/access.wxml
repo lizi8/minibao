@@ -1,0 +1,13 @@
+<!--pages/access/access.wxml-->
+<view class='container'>
+  <view class='flex-col wh9 '>
+    <block wx:for="{{headList}}">
+      <view class='flex-row acCon'>
+        <view class='flex-row user '>
+          <image src='{{item.NickUrl}}' mode="cover" class='userinfo-avatar'></image>
+          <text class='ellipsis nickName'>{{item.NickName}}</text>
+        </view>
+        <text>{{item.UpTime}}</text> </view>
+    </block>
+  </view>
+</view>

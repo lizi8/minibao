@@ -1,0 +1,39 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+  <scroll-view class="tab" scroll-x="true">
+
+      <view bindtap='btnsearch' data-type="餐饮">
+        <image class='icon' wx:if="{{!catering}}" src="{{imgPath}}catering1.png"></image>
+        <image class='icon' wx:else src="{{imgPath}}catering.png"></image>
+        <text>餐饮</text>
+      </view>
+
+      <view bindtap='btnsearch' data-type="公交">
+        <image class='icon' wx:if="{{!bus}}" src="{{imgPath}}Bus1.png"></image>
+        <image class='icon' wx:else src="{{imgPath}}Bus.png"></image>
+        <text>公交</text>
+      </view>
+
+      <view bindtap='btnsearch' data-type="学校">
+        <image class='icon' wx:if="{{!school}}" src="{{imgPath}}school1.png"></image>
+        <image class='icon' wx:else  src="{{imgPath}}school.png"></image>
+        <text>学校</text>
+      </view>
+
+      <view bindtap='btnsearch' data-type="购物">
+        <image class='icon' wx:if="{{!shop}}" src="{{imgPath}}shop1.png"></image>
+        <image class='icon' wx:else  src="{{imgPath}}shop.png"></image>
+        <text>购物</text>
+      </view>
+      
+    <!-- <block wx:for="{{typeList}}">
+      <view bindtap='btnsearch' data-type="{{item.name}}">
+        <image class='icon' src="{{item.img}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </block> -->
+  </scroll-view>
+  <view class="page-section page-section-gap">
+    <map id="myMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+  </view>
+</view>

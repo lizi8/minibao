@@ -1,0 +1,13 @@
+<!--pages/list/list.wxml-->
+<view class='container'>
+  <scroll-view class='list-content' scroll-y>
+    <block wx:for="{{newsList}}">
+      <view class='content' catchtap='onWeb' data-con="{{item.Content}}">
+        <view class='tpicBox newsPic'>
+          <image src='{{picUrl+item.ImgUrl}}' mode="widthFix" class='wh'></image>
+        </view>
+        <text class='title  ellipsis wh'>{{item.Name}}</text>
+        <text class='readNum'>{{item.BrandCount}}人阅读</text> </view>
+    </block>
+  </scroll-view>
+</view>

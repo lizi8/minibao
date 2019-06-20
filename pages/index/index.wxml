@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="container page" >
+  <swiper class='swiper wh' indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{banner}}">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" catchtap="onDetail" data-id="{{item.ProjectCode}}" class="slide-image wh" mode="widthFix"  data-con="{{item.Content}}" data-code="{{item.BrandCode}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='notice flex-row wh'>
+  <text class='tip f15'>楼盘资讯</text>
+   <swiper class='swiperh' vertical="true"  autoplay="true" interval="2000" duration="500" circular="true">
+      <swiper-item >
+    【保利·云禧】一席难再得 剩余少量建面约89-127㎡地铁墅质洋房 火热争藏
+      </swiper-item>
+        <swiper-item>
+      常州【保利·紫荆公馆】高层价 抢电梯洋房
+      </swiper-item>
+        <swiper-item>
+     【保利·时光印象】央景中轴 园林八景 奢视栋距 承万众期待 启时光风华
+      </swiper-item>
+  </swiper>
+  </view>
+
+  <view class='columnName col1 flex-row'>
+    <text>新鲜事</text>  <text class='f12' catchtap='onInfoList'>查看全部></text>
+  </view>
+  <view class="wh newsContent flex-row">
+    <block wx:for="{{newsList}}" wx:for-item="item" >
+      <view catchtap='onWeb' data-con="{{item.Content}}" data-code="{{item.BrandCode}}">
+        <view class='newsPic'>
+          <image src="{{picUrl+item.ImgUrl}}" data-url="{{picUrl+item.ImgUrl}}" mode="widthFix" class='wh' />
+        </view>
+        <text class='ellipsis2'>{{item.Name}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='columnName flex-col'>
+    <text>好盘推荐</text>
+  </view>
+  <view class='flex-col wh'>
+    <scroll-view class='navbar flex-row' scroll-x>
+      <view wx:for="{{nav}}" class="{{ navIndex == index?'active':'' }}" wx:for-item="item">
+        <text bindtap="changeList" data-index="{{index}}">{{item}}</text>
+      </view>
+    </scroll-view>
+    <view class='flex-col bulidContent'>
+      <block wx:for="{{bulidList}}" wx:for-item="item">
+        <view class='flex-col buliditem' bindtap="onDetail" data-id="{{item.ProjectCode}}">
+         <view class='flex-row  bulid-name-num'>
+              <text >{{item.Name}}</text>
+             
+            </view>
+          <view class='tpicBox'>
+            <image src="{{picUrl+item.ImgUrl}}" class="wh" mode="widthFix" />
+          </view>
+          <view class='flex-col wh9 bulidcon'>
+            <view class='flex-row tag'>
+              <block wx:for="{{item.tag}}" wx:for-item="citem">
+                <text>{{citem.text}}</text>
+              </block>
+            </view>
+            <view class='price'>{{item.Price}}</view>
+              <view >地址：{{item.BuildAddr}}</view>
+             <view class='wh attention flex-row'> <image  data-addrlat="{{item.Addrlat}}" data-addrlng="{{item.Addrlng}}" data-name="{{item.Name}}" class='icon' catchtap='onMap' src="{{imgPath}}dw.png"></image> <view><image  class='icon' src="{{imgPath}}gz.png"></image><text> {{item.ProjectCount}}人关注</text></view> </view>
+             <!-- <text class='bco '>{{item.ProjectCount}}人关注</text> -->
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- <view class='more flex-col' bindtap='onInfoList'>
+    <text>更多新鲜事</text>
+  </view> -->
+</view>

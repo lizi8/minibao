@@ -1,0 +1,33 @@
+<view class='container'>
+  <view class='flex-col wh9 head'>预约看房</view>
+  <view class='flex-col wh9 content'>
+    <form bindsubmit="formSubmit">
+      <view>
+        <text>姓名</text>
+        <input name="userName"  placeholder='请输入姓名'></input>
+      </view>
+      <view>
+        <text>性别</text>
+        <picker bindchange="bindGenderChange" name="gender"  range="{{array}}">
+          <view class="picker">
+            {{array[gender]}}
+          </view>
+        </picker>
+      </view>
+      <view>
+        <text>手机</text>
+        <input name="phone" placeholder='请输入手机号码'></input>
+      </view>
+      <view>
+        <text>时间</text>
+        <picker mode="date"  start="{{startdata}}" name="reserveDate"  bindchange="bindDateChange">
+          <view class="picker">
+            {{reserveDate}}
+          </view>
+        </picker>
+      </view>
+      <button form-type='submit' class="btn submit">确认</button>
+    </form>
+  </view>
+
+</view>

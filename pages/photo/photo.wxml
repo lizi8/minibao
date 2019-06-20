@@ -1,0 +1,56 @@
+<!--pages/list/list.wxml-->
+<view class='container'>
+  <scroll-view class='navbar-fixed flex-row' scroll-x>
+    <view wx:for="{{nav}}" class="{{ navIndex == index?'active':'' }}" wx:for-item="item">
+      <text bindtap="changeList" data-index="{{index}}">{{item}}</text>
+    </view>
+  </scroll-view>
+  <swiper class='swiper wh' duration="1000" current="{{current}}" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view class='photo-list' scroll-y>
+        <block wx:for="{{photoList}}" wx:if="{{item.ImgID==1}}">
+          <!-- <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" /> -->
+          <view class='photoBox'>
+          <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" data-imgurl="{{picUrl+item.ImgUrl}}" class='wh'  bindtap='previewImg'  data-imgid="1"/>
+        </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class='photo-list' scroll-y>
+        <block wx:for="{{photoList}}" wx:if="{{item.ImgID==2}}">
+          <view class='photoBox'>
+          <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" data-imgurl="{{picUrl+item.ImgUrl}}" class='wh' bindtap='previewImg' data-imgid="2"/>
+         </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class='photo-list' scroll-y>
+        <block wx:for="{{photoList}}" wx:if="{{item.ImgID==3}}">
+        <view class='photoBox'>
+          <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" data-imgurl="{{picUrl+item.ImgUrl}}" class='wh' bindtap='previewImg' data-imgid="3"/>
+        </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class='photo-list' scroll-y>
+        <block wx:for="{{photoList}}" wx:if="{{item.ImgID==4}}">
+        <view class='photoBox'>
+          <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" data-imgurl="{{picUrl+item.ImgUrl}}" class='wh'  bindtap='previewImg' data-imgid="4"/>
+        </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+
+
+
+
+
+
+
+
+</view>

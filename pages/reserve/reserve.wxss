@@ -1,0 +1,36 @@
+/* pages/reserve/reserve.wxss */
+
+.head {
+  margin: 50rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.content view {
+  display: flex;
+  flex-direction: row;
+}
+
+.content view {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #fafafa;
+  font-size: 26rpx;
+}
+
+.userinfo-avatar {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.content view input, .picker {
+  margin-left: 50rpx;
+}
+
+picker {
+  flex: 1;
+  width: 70%;
+}

@@ -1,0 +1,26 @@
+<!--pages/collect/collect.wxml-->
+<view class='container' wx:if="{{collectList.length}}"> 
+  <block wx:for="{{collectList}}" >
+    <view class='collectCon'>
+     <view class='tpicBox'><image src="{{picUrl+item.ImgUrl}}" class="wh img-radius" mode="widthFix" /></view>
+      
+      <view class='flex-col wh9 content'>
+        <view class='title'>
+          <text>{{item.Name}}</text>
+        </view>
+        <view class='scolor ellipsis'>
+          <text>{{item.BuildAddr}}</text>
+        </view>
+        <view class='price'>
+          <text>{{item.Price}}</text>
+        </view>
+      </view>
+      <view class='wh btnBox' >
+        <text class='btn btnCancel' catchtap='onCancel' data-id='{{item.ProjectCode}}'>取消收藏</text>
+      </view>
+    </view>
+  </block>
+</view>
+  <view wx:else class="flex-col emptyView">
+  暂无收藏
+  </view>

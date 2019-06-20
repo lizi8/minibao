@@ -1,0 +1,11 @@
+<!--pages/myIntegral/myIntegral.wxml-->
+<view class='container'>
+  <block wx:for="{{integralList}}">
+    <view>
+      <text>{{item.Type}}</text>
+      <text>{{item.CreateDate}}</text>
+      <text wx:if="{{item.Type=='消费'}}">-{{item.Integral}}</text> 
+       <text wx:else>+{{item.Integral}}</text> 
+    </view>
+  </block>
+</view>

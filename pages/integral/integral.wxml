@@ -1,0 +1,35 @@
+<!--pages/integral/integral.wxml-->
+<view class='container'>
+  <view class='head flex-row wh'>
+    <view class='head-row1 flex-row'>
+      <image class="userinfo-avatar" src="{{userInfo.NameUrl}}"></image>
+      <text class='f16 bco'>{{userInfo.Integral}}积分</text>
+    </view>
+    <view class='flex-row'>
+     <text class='rule ' bindtap='onRule'>积分规则</text>
+      <text wx:if="{{userInfo.Opt==2}}" class='signIn on'>已签到</text>
+      <text bindtap='onSignIn' wx:if="{{userInfo.Opt==1}}" class='signIn'>签到</text>
+     
+    </view>
+  </view>
+  <view class='flex-row content wh'>
+    <view class='navbar1 ' >
+      <view wx:for="{{nav}}" class="{{ navIndex == index?'active1':'' }}" wx:for-item="item">
+        <text bindtap="changeList" data-index="{{index}}">{{item}}</text>
+      </view>
+    </view>
+    <scroll-view class='goodsCon  ' scroll-y style='height:{{goodConH}}'>
+    <!-- <view class='goodsMain '> -->
+      <block wx:for="{{goodsList}}">
+        <view class='flex-col goodsBox wh' bindtap='onGoods' data-id="{{item.GoodsCode}}">
+          <view class='picbox'>
+            <image src="{{picUrl+item.ImgUrl}}" mode="widthFix" class='wh'></image>
+          </view>
+            <text class='title ellipsis'>{{item.Name}}</text>
+            <text class='num'>{{"积分"+item.Integral}}</text>
+        </view>
+      </block>
+      <!-- </view> -->
+    </scroll-view>
+  </view>
+</view>

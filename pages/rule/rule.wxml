@@ -1,0 +1,4 @@
+<!--pages/rule/rule.wxml-->
+<view class='container'>
+  <image src="{{imgurl}}" class='wh' mode="widthFix"></image>
+</view>

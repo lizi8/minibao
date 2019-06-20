@@ -1,0 +1,56 @@
+{
+  "pages": [
+
+    "pages/login/login",
+    "pages/index/index",
+    "pages/person/person",
+    "pages/integral/integral",
+    "pages/detail/detail",
+    "pages/rule/rule",
+    "pages/user/user",
+    "pages/web/web",
+    "pages/verification/verification",
+    "pages/myIntegral/myIntegral",
+    "pages/map/map",
+    "pages/myReserve/myReserve",
+    "pages/reserve/reserve",
+    "pages/access/access",
+    "pages/collect/collect",
+    "pages/list/list",
+    "pages/goods/goods",
+    "pages/photo/photo",
+    "pages/logs/logs",
+    "pages/calculator/calculator"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#bd9e7f",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/integral/integral",
+        "iconPath": "/images/inte.png",
+        "selectedIconPath": "/images/inte1.png",
+        "text": "积分"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

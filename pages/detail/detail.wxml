@@ -1,0 +1,243 @@
+<!--pages/detail/detail.wxml-->
+<view class='container'>
+  <swiper class='swiper wh' indicator-dots="true" autoplay="autoplay" interval="5000" duration="1000">
+    <block wx:for="{{values.headImg}}">
+      <swiper-item>
+        <image src="{{picUrl+item.ImgUrl}}" class="wh" mode="widthFix" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='baseInfo flex-col'>
+    <text class='bulidName'>{{values.Name}}</text>
+    <view class='flex-row tag'>
+      <block wx:for="{{values.tag}}" wx:for-item="citem">
+        <text>{{citem.text}}</text>
+      </block>
+    </view>
+    <view class='flex-row'>
+      <text class='con'>均价</text>
+      <text class='price ellipsis'>{{values.Price}}</text> </view>
+    <view class='flex-row base-address '>
+      <text class='con'>地址</text>
+      <text class='address ellipsis'>{{values.BuildAddr}}</text>
+      <!-- <image class='icon' catchtap='onMap' src="{{imgPath}}dw.png"></image> -->
+    </view>
+    <view class='flex-col looker'>
+      <view class='flex-row lookNum'>
+        <image class='icon' src="{{imgPath}}wg.png"></image>
+        <text>{{values.ProjectCount}}人关注</text>
+      </view>
+      <view class='headList flex-row' bindtap='onHeadList'>
+        <block wx:for="{{headList}}">
+          <image src="{{item.NickUrl}}" mode="cover" />
+        </block>
+        <text class='headmore'>更多</text>
+      </view>
+    </view>
+  </view>
+  <view class='buildInfo cloumnCon'>
+    <view>
+      <text class='columnName '>楼盘信息</text> </view>
+
+    <!-- <view wx:if="{{isBuildAll}}" class='build-hide'> -->
+
+    <view>
+      <image class='icon' src="{{imgPath}}rjl.png"></image>
+      <text>容积率：</text>
+      <text>{{values.Ratio}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}lh.png"></image>
+      <text>绿化率：</text>
+      <text>{{values.GreenRate}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}hs.png"></image>
+      <text>规划户数：</text>
+      <text>{{values.DesignHouse}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}zx.png"></image>
+      <text>装修情况：</text>
+      <text>{{values.Renovation}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}mj.png"></image>
+      <text>占地面积：</text>
+      <text>{{values.Area}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}kp.png"></image>
+      <text>开盘时间：</text>
+      <text>{{values.BuildTime}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}jf.png"></image>
+      <text>交房时间：</text>
+      <text>{{values.GetTime}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}cq.png"></image>
+      <text>产权年限：</text>
+      <text>{{values.HaveTime}}年</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}kfs.png"></image>
+      <text>开发商：</text>
+      <text>{{values.Developer}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}dz.png"></image>
+      <text>楼盘地址：</text>
+      <text>{{values.BuildAddr}}</text> </view>
+    <view>
+      <image class='icon' src="{{imgPath}}slc.png"></image>
+      <text>售楼处：</text>
+      <text>{{values.SaleAddr}}</text> </view>
+    <!-- </view> -->
+    <!-- <view wx:else bindtap='onBuildAll'>
+      <text class='bco'>展开显示全部</text> </view> -->
+  </view>
+  <!-- 房型介绍 -->
+  <view class='cloumnCon'>
+    <view class='columnName'>
+      <text>房型介绍</text>
+    </view>
+    <scroll-view class='scroll-house   mt5' scroll-x="true">
+      <block wx:for="{{values.roomImg}}" wx:for-item="citem">
+        <view class='house '>
+          <view class='tpicBox houseBox'>
+            <image src="{{picUrl+citem.RoomUrl}}" mode="widthFix" data-imgurl="{{picUrl+citem.RoomUrl}}" bindtap='previewImg' />
+          </view>
+          <view class='houseName  flex-row'>
+            <text>{{citem.RoomName}}</text>
+            <text>{{citem.RoomArea}}</text>
+          </view>
+          <!-- <view class='ellipsis mt2 wh9'> 
+          </view> -->
+          <view class='ellipsis mt2 ml2 wh9'> {{citem.RoomTag}}
+          </view>
+          <view class='line mt2'></view>
+          <view class='price price1 mt2 ml2'>{{citem.Price}}</view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 楼盘相册 -->
+  <view class='cloumnCon'>
+    <view class='columnName'>
+      <text>楼盘相册</text>
+      <text class='f12' catchtap='onToPhoto'>查看全部></text>
+    </view>
+    <scroll-view class='scroll-photo' scroll-x="true">
+      <block wx:for="{{values.children}}" wx:for-item="citem">
+        <view class='photo' catchtap='onToPhoto'>
+          <view class='tpicBox photoBox'>
+            <image src="{{picUrl+citem.ImgUrl}}" mode="widthFix" />
+          </view>
+          <text class='mt2 ml3'>{{citem.ImgName}}</text> </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 周边配套 -->
+  <view class='around cloumnCon ' wx:if="{{values.NearbyDesc==1}}">
+    <view class='columnName'>
+      <text>周边配套</text> </view>
+    <text class='desc'>{{values.Introducer}}</text>
+    <view class='arContent'>
+      <view>
+        <image class='icon' src="{{imgPath}}jz.png"></image>
+        <text>精致产品</text>
+        <text>{{values.Describe}}</text>
+      </view>
+      <view>
+        <image class='icon' src="{{imgPath}}fg.png"></image>
+        <text>设计风格</text>
+        <text>{{values.DesignStyle}}</text>
+      </view>
+      <view>
+        <image class='icon' src="{{imgPath}}jy.png"></image>
+        <text>教育环境</text>
+        <text>{{values.Education}}</text>
+      </view>
+      <view>
+        <image class='icon' src="{{imgPath}}yy.png"></image>
+        <text>医疗配套</text>
+        <text>{{values.Medicine}}</text>
+      </view>
+      <view wx:if="{{isAroundAll}}" class='around-hide'>
+        <view>
+          <image class='icon' src="{{imgPath}}gw.png"></image>
+          <text>购物消费</text>
+          <text>{{values.ShopInfo}}</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}dt.png"></image>
+          <text>地铁交通</text>
+          <text>{{values.Traffic}}</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}yq.png"></image>
+          <text>园区景观</text>
+          <text>{{values.Scenery}}</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}wz.png"></image>
+          <text>地理位置</text>
+          <text>{{values.Position}}</text>
+        </view>
+      </view>
+      <view wx:else bindtap='onAroundAll'>
+        <text class='bco'>展开显示全部</text> </view>
+    </view>
+  </view>
+  <view class=' wh9 mt5'>
+    <view>
+      <text class='columnName'>周边概括</text> </view>
+    <view>
+      <view class='flex-col wh mapCon'>
+        <image src="{{imgPath}}map.jpg" mode="widthFix" class='mappic' />
+      </view>
+      <view class='flex-row mapType wh' catchtap='onMap'>
+        <view>
+          <image class='icon' src="{{imgPath}}catering.png"></image>
+          <text>餐饮</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}Bus.png"></image>
+          <text>公交</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}school.png"></image>
+          <text>学校</text>
+        </view>
+        <view>
+          <image class='icon' src="{{imgPath}}shop.png"></image>
+          <text>购物</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="calculator" bindtap="onCalculator">
+    <image src="{{imgPath}}jsq.png" mode="widthFix"></image>
+  </view>
+
+   <view class="phone" bindtap="onTel">
+    <image src="{{imgPath}}tel.png" mode="widthFix"></image>
+  </view>
+
+  <view class='empty'></view>
+  <view class='footer flex-row'>
+    <view catchtap='onCollect'>
+      <image class='icon' wx:if="{{values.IsShow==1}}" src="{{imgPath}}sc.png"></image>
+      <image class='icon' wx:else src="{{imgPath}}wsc.png"></image>
+      <text>收藏</text> </view>
+    <view>
+      <button open-type="share" class='transpond icon'></button>
+      <text>转发</text> </view>
+    <view bindtap='creatQr'>
+      <image class='icon' src="{{imgPath}}hb.png"></image>
+      <text>海报生成</text> </view>
+    <view class='btn-yuyue' catchtap='onReserve'>
+      <text>预约看房</text> </view>
+  </view>
+
+  <!-- <view class="poster" wx:if="{{isposter}}" style='width:{{windowWidth}}px;height:{{posterHeight}}px'> -->
+  <view class="poster" wx:if="{{isposter}}" catchtouchmove="ture">
+    <canvas canvas-id="myCanvas" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" class='canvas-poster' style="width:{{posterwidth}}px;height:{{posterHeight}}px;left:{{posterLeft}}px;top:{{posterTop}}px;"></canvas>
+    <cover-view class='btn-close' bindtap='onClose'>关闭图片</cover-view>
+    <cover-view class='btn-save' bindtap='onSave'>保存图片</cover-view>
+  </view>
+</view>
